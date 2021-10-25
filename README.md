@@ -1,78 +1,51 @@
+[![PyPI](https://img.shields.io/pypi/v/dnevnikru)](https://pypi.org/project/dnevnikru/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/dnevnikru)](https://pypi.org/project/dnevnikru)
 # dnevnikru
 
-> Модуль для работы с сайтом dnevnik.ru на python
+> Module for working with the site dnevnik.ru with python
 
-Объект dnevnik принимает в себя login и password от аккаунта в дневнике <br/>
-Методы: homework, marks, searchpeople, birthdays
-
-## Установка
+Dnevnik object accepts login and password from the dnevnik.ru account <br/>
+Methods: homework, marks, searchpeople, birthdays, week <br>
+##### Read the full functionality of the module here: [Wiki][wiki] <br>
+(Doesn't work in regions where you can enter the Diary only through GosUslugi !)
+## Installation
 
 Windows:
 
-Поместите файл ```dnevnikru.py``` в папку с вашим проектом
-
-```python
-import dnevnikru
+Run the command in the terminal: <br>
+```cmd
+pip install dnevnikru
 ```
 
-## Примеры использования
+## Examples of use
 
 ```python
 from dnevnikru import Dnevnik
 
-dn = Dnevnik(login='Your login', password='Your password')
+dairy = Dnevnik(login='Your login', password='Your password')
 
-homework = dn.homework(studyyear=2020, datefrom='01.12.2020', dateto='30.12.2020')
-marks = dn.marks(index=0, period=1)
-class_11b = dn.searchpeople(grade='11Б')
-birthdays = dn.birthdays(day=9, month=5)
-schedule = dn.week(info="schedule", weeks=-1)
+homework = dairy.homework(studyyear=2020, datefrom='01.12.2020', dateto='30.12.2020')
+marks = dairy.marks(index=0, period=1)
+class_11b = dairy.searchpeople(grade='11B')
+birthdays = dairy.birthdays(day=9, month=5)
+schedule = dairy.week(info="schedule", weeks=-1)
 ```
 
-_Ещё больше примеров использования на странице [Wiki][wiki]._
+#### _For more examples of uses and parameters in methods, see [Wiki][wiki]._
 
-## Зависимости
+## Requires
 
-Для работы модуля понадобятся библиотеки `requests`, `fake-useragent`, `lxml`, `bs4`
+The module requires `requests`, `lxml`, `bs4` libraries
 
-```cmd
-pip install -r requirements.txt
-```
+## Releases
 
-Или используя менеджер [Pipenv](https://github.com/pypa/pipenv)
+* 1.0
 
-Если не установлен pipenv, выполнить
+## Contact
 
-```cmd
-python -m pip install pipenv
-```
+Aleksandr – tg: [@paracosm17](https://t.me/paracosm17) – email: paracosm17@yandex.ru <br>
 
-Создать виртуальное окружение в директории с проектом
-
-```cmd
-pipenv shell
-```
-
-Установить все требуемые библиотеки из Pipfile
-
-```cmd
-pipenv install --ignore-pipfile
-```
-
-## Релизы
-
-* 0.0.1
-  * Первая версия проекта
-
-## Связь
-
-Alexandr – [@paracosm17](https://t.me/paracosm17) – paracosm17@yandex.ru <br>
-<br>
-Contributors: <br>
-<br>
-<a href="https://github.com/paracosm17"><img src="https://avatars.githubusercontent.com/u/85677238?v=4&size=40" /></a>
-<a href="https://github.com/stepanskryabin"><img src="https://avatars.githubusercontent.com/u/47498917?v=4&size=40" /></a>
-
+## LICENSE
 Distributed under the Apache License 2.0 license. See ``LICENSE`` for more information.
 
 <!-- Markdown link & img dfn's -->
